@@ -1,12 +1,8 @@
 Documentazione INDE GAC
 ================================
-
-Installing Node.js
+Lo script permette di utilizzare il componente framework GAC di Instant Developer Cloud, in grado di generare documenti di reportistica direttamente sullo spazio Google Drive.
+Importazione script
 ----------------
-
-Notice previous installations of Node.js or io.js could conflict with our setup.
-We recommend to always install Node.js @6.2.1.
-
 ### Windows Server procedure
 
 * Open https://nodejs.org/ in your browser.
