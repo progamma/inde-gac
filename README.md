@@ -7,7 +7,7 @@ Lo script permette di utilizzare il componente framework GAC di Instant Develope
 ### Importazione script
 La prima fase consiste nell'importare lo script sul proprio spazio cloud.
 * Accedi a Google Drive da browser https://www.google.com/intl/it/drive/.
-* Clicca sul bottone "Nuovo" e nel menù a tendina che si aprirà seleziona Altro -> Collega altre applicazioni
+* Clicca sul bottone "Nuovo" e nel menù a tendina che si aprirà seleziona `Altro -> Collega` altre applicazioni
 * Nella finestra che si aprirà cerca "Google Apps Script" e clicca su "Collega"
 * Una volta che l'applicazione sarà collegata clicca su sul bottone "Nuovo" e nel menù a tendina che si aprirà seleziona Altro -> Google Apps Script
 * Copia e incolla il contenuto di "script.js" nell'editor dello script sostituendo tutto il contenuto inserito per default
