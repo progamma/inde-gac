@@ -5,7 +5,7 @@ Documentazione INDE GAC
 Lo script permette di utilizzare il componente framework GAC di Instant Developer Cloud, in grado di generare documenti di reportistica direttamente sullo spazio Google Drive.
 ----------------
 ### Importazione script
-Il primo passo da eseguire è quello di importare lo script sul proprio spazio cloud.
+La prima fase consiste nell'importare lo script sul proprio spazio cloud.
 * Accedi a Google Drive da browser https://www.google.com/intl/it/drive/.
 * Clicca sul bottone "Nuovo" e nel menù a tendina che si aprirà seleziona Altro -> Collega altre applicazioni
 * Nella finestra che si aprirà cerca "Google Apps Script" e clicca su "Collega"
@@ -14,13 +14,41 @@ Il primo passo da eseguire è quello di importare lo script sul proprio spazio c
 * All'interno dello script editor clicca su: Pubblica -> Distribuisci come API eseguibile, inserisci i dati richiesti e quindi completa l'operazione cliccando su "Distribuisci"
 * Fai clic su File -> Proprietà del progetto e prendi nota dello Script ID che sarà un parametro da utilizzare all'interno del codice su Instant Developer Cloud.
 
-
-### Impostazione API e credenziali
-Il secondo passo da eseguire è quello di configurare le API e le credenzialiper potersi autenticare ed eseguire lo script da remoto.
+### Creazione API e credenziali
+In questa fase configuriamo le API e creiamo le credenzialiper potersi autenticare ed eseguire lo script da remoto.
 * All'interno dello script editor clicca su: Risorse -> Progetto Cloud Platform, nell pop-up che si aprirà clicca il link che si trova sotto "Questo script al momento è associato al progetto:" così da accedere alle impostazioni del progetto Cloud.
 * Clicca sul bottone "Abilita API" e nella nuova finestra cerca e seleziona "Google Apps Script Execution API", infine clicca su "Abilita"
 * Dal menù di sinistra clicca su "Credenziali" e nella nuova finestra su "Crea Credenziali -> ID client OAuth"
 * Seleziona come tipo di applicazione "Applicazione web", dai il nome che desideri e clicca su crea, prendi nota dell'ID client e del client secret che ti verranno mostrati.
+
+### Configurazione origini Javascript e URI di reindirizzamento del client OAuth
+Dopo aver creato le credenziali per poterle utilizzare è necessario configurare alcuni parametri.
+* Clicca sulla chiave OAuth appena creata, ti verrà mostrata la pagina di configurazione dove è necessario aggiungere le origini consentite e gli URI di reindirizzamento, per sapere quali parametri inserire è necessario distingue due momenti: 
+* sviluppo Applicazione
+  * origine javascript: in questo campo bisogna aggiungere l'url del server di sviluppo su cui si lavora, nel caso base,       ..ovvero quando stiamo utilizzando il server di default inseriamo: https://ide1-developer.instantdevelopercloud.com
+  * URI di reindirizzamento autorizzati: in questo campo aggiungeremo invece l'url dove Google ci reindirezzerà dopo l'autorizzazione dal prompt di google, dobbiamo quindi scrivere l'url dell'applicazione in esecuzione con questi parametri in più:
+  <url server>/preview.html?appUrl=/<session ID>/<App ID>/run&device=<device>&mode=rest&cmd=gauth 
+  questo per poter recuperare il codice di accesso nell'onCommand dell'applicazione che Le API di google aggiungono come parametro get all'url di reindirizzamento. (Per maggiori informazioni consultare la Documentazione del framework su Instant Developer Cloud).
+  Esempio un url di autorizzazione:
+  http://localhost:8081/app/client/preview.html?appUrl=/8e97cd80-1930-4200-a5ef-b3ba2580d0c6/pfcM12LrJ%2Fd%2F%2FMXfSHLMvQ%3D%3D/run&device=desktop&mode=rest&cmd=gauth
+
+Nota bene: l'url di reindirizzamento che passerei alle API deve essere identico a uno di quelli impostati, indi per cui se si vuole utilizzare il metodo generateAuthUrl della classe GAC in fase di sviluppo sarà necessario modificare l'impostazione dell'OAuth client ogni qual volta il session ID cambia, fatto che succede quando si chiude il progetto e lo si riapre.
+
+* Applicazione in produzione
+  * origine javascript: in questo campo bisogna aggiungere l'url del server di produzione su cui è installata l'applicazione, per esempio per la console di Instant developer inseriremo: https://console.instantdevelopercloud.com
+  * URI di reindirizzamento autorizzati: similmente al caso di svilippo inseriremo
+  <url applicazione>/<nome app>?&mode=rest&cmd=<nome_comando> 
+  in questo caso dato che l'URL è statico e sempre noto una volta configurato correttamente non sarà più necessario alcun intervento.
+  Esempio di url di autorizzazione per il Cloud Control Center:
+  https://console.instantdevelopercloud.com/CCC?mode=rest&cmd=gauth
+
+
+
+
+
+
+
+
 
 The server is configured via the `config.json` file. An example can be found in `basedir/IDServer/server/config-example.json`.
 When working in production, `basedir/config/config.json` is loaded.
