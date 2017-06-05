@@ -37,11 +37,13 @@ Nota bene: l'url di reindirizzamento che passerei alle API deve essere identico 
 * Applicazione in produzione
   * origine javascript: in questo campo bisogna aggiungere l'url del server di produzione su cui è installata l'applicazione, per esempio per la console di Instant developer inseriremo: https://console.instantdevelopercloud.com
   * URI di reindirizzamento autorizzati: similmente al caso di svilippo inseriremo
-  <url applicazione>/<nome app>?&mode=rest&cmd=<nome_comando> 
+  <url applicazione>/<nome app>?&mode=rest&cmd=gauth
   in questo caso dato che l'URL è statico e sempre noto una volta configurato correttamente non sarà più necessario alcun intervento.
   Esempio di url di autorizzazione per il Cloud Control Center:
   https://console.instantdevelopercloud.com/CCC?mode=rest&cmd=gauth
 
+Una volta eseguiti correttamente questi passi sarà possibile utilizzare la classe GAC del framework, per informazioni su di essa consulta direttamente la documentazione presente all'interno dell'ambiente di sviluppo.
+Per ulteriori informazioni sulla Google Execution API  e sul ciclo di autorizzazione consulta [la documentazione ufficiale](https://developers.google.com/apps-script/guides/rest/api)
 
 
 
@@ -51,9 +53,5 @@ Nota bene: l'url di reindirizzamento che passerei alle API deve essere identico 
 
 
 The server is configured via the `config.json` file. An example can be found in `basedir/IDServer/server/config-example.json`.
-When working in production, `basedir/config/config.json` is loaded.
 
-The file is a JSON formatted object, with the following properties:
-
-*[PM2](https://github.com/Unitech/pm2).
 
