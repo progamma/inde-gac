@@ -35,7 +35,7 @@ Dopo aver creato le credenziali per poterle utilizzare è necessario configurare
   Esempio un url di autorizzazione:  
   http://host/app/client/preview.html?appUrl=/8e97cd80-1930-4200-a5ef-b3ba2580d0c6/pfcM12LrJ%2Fd%2F%2FMXfSHLMvQ%3D%3D/run&device=desktop&mode=rest&cmd=gauth
 
-Nota bene: l'url di reindirizzamento che passerei alle API deve essere identico a uno di quelli impostati, indi per cui se si vuole utilizzare il metodo generateAuthUrl della classe GAC in fase di sviluppo sarà necessario modificare l'impostazione dell'OAuth client ogni qual volta il session ID cambia, fatto che accade quando si chiude il progetto e lo si riapre.
+**NOTA BENE**: l'url di reindirizzamento che passerei alle API deve essere identico a uno di quelli impostati, indi per cui se si vuole utilizzare il metodo generateAuthUrl della classe GAC in fase di sviluppo sarà necessario modificare l'impostazione dell'OAuth client ogni qual volta il session ID cambia, fatto che accade quando si chiude il progetto e lo si riapre.
 
 * se siamo in fase di produzione
   * origine javascript:   
