@@ -42,7 +42,7 @@ Dopo aver creato le credenziali per poterle utilizzare è necessario configurare
   in questo campo bisogna aggiungere l'url del server di produzione su cui è installata l'applicazione, per esempio per la console di Instant developer inseriremo:   
   https://console.instantdevelopercloud.com
   * URI di reindirizzamento autorizzati   
-  similmente al caso di sviluppo inseriremo  
+  similmente al caso di sviluppo inseriremo:  
   `<url applicazione>/<nome app>?&mode=rest&cmd=gauth`   
   in questo caso dato che l'URL è statico e sempre noto una volta configurato correttamente non sarà più necessario alcun intervento.  
   Esempio di url di autorizzazione per il Cloud Control Center:  
