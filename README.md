@@ -21,7 +21,7 @@ In questa fase configuriamo le API e creiamo le credenziali per potersi autentic
 * Dal menù di sinistra clicca su `Credenziali` e nella nuova finestra su `Crea Credenziali -> ID client OAuth`
 * Seleziona come tipo di applicazione `Applicazione web`, dai il nome che desideri e clicca su crea, prendi nota dell'ID client e del client secret che ti verranno mostrati.
 
-### Configurazione origini Javascript e URI di reindirizzamento del client OAuth
+### Configurazione origini Javascript e URI di reindirizzamento 
 Dopo aver creato le credenziali per poterle utilizzare è necessario configurare alcuni parametri.
 * Clicca sulla chiave OAuth appena creata, ti verrà mostrata la pagina di configurazione dove è necessario aggiungere le origini consentite e gli URI di reindirizzamento: 
 * se siamo in fase di sviluppo:
