@@ -1,4 +1,4 @@
-Instant Developer Google Api Connector 
+Instant Developer Google Apps Connect
 ================================
 
 
