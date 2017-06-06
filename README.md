@@ -1,4 +1,4 @@
-INDE GAC SCRIPT
+Instant Developer Google Api Connector 
 ================================
 
 
