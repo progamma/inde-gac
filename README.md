@@ -24,38 +24,28 @@ In questa fase configuriamo le API e creiamo le credenziali per potersi autentic
 ### Configurazione origini Javascript e URI di reindirizzamento del client OAuth
 Dopo aver creato le credenziali per poterle utilizzare è necessario configurare alcuni parametri.
 * Clicca sulla chiave OAuth appena creata, ti verrà mostrata la pagina di configurazione dove è necessario aggiungere le origini consentite e gli URI di reindirizzamento: 
-* se stiamo sviluppando:
+* se siamo in fase di sviluppo:
   * origine javascript      
-  in questo campo bisogna aggiungere l'url del server di sviluppo su cui si lavora, nel caso base,       ..ovvero quando stiamo utilizzando il server di default inseriamo: 'https://ide1-developer.instantdevelopercloud.com'
+  in questo campo bisogna aggiungere l'url del server di sviluppo su cui si lavora, per esempio se stai utilizzando il server di default l'origine da inserire sarà: 'https://ide1-developer.instantdevelopercloud.com'
   * URI di reindirizzamento autorizzati   
   in questo campo aggiungeremo invece l'url dove Google ci reindirezzerà dopo l'autorizzazione dal prompt di google, dobbiamo quindi scrivere l'url dell'applicazione in esecuzione con questi parametri in più:
-  <url server>/preview.html?appUrl=/<session ID>/<App ID>/run&device=<device>&mode=rest&cmd=gauth 
-  questo per poter recuperare il codice di accesso nell'onCommand dell'applicazione che Le API di google aggiungono come parametro get all'url di reindirizzamento. (Per maggiori informazioni consultare la Documentazione del framework su Instant Developer Cloud).
-  Esempio un url di autorizzazione:
-  http://localhost:8081/app/client/preview.html?appUrl=/8e97cd80-1930-4200-a5ef-b3ba2580d0c6/pfcM12LrJ%2Fd%2F%2FMXfSHLMvQ%3D%3D/run&device=desktop&mode=rest&cmd=gauth
+  <url server>/preview.html?appUrl=/<session ID>/<App ID>/run&device=<device>&mode=rest&cmd=gauth   
+  questo per poter recuperare il codice di accesso, nell'onCommand dell'applicazione, che Le API di google aggiungono come parametro GET all'url di reindirizzamento. (Per maggiori informazioni consultare la Documentazione del framework su Instant Developer Cloud).
+  Esempio un url di autorizzazione:  
+  http://host/app/client/preview.html?appUrl=/8e97cd80-1930-4200-a5ef-b3ba2580d0c6/pfcM12LrJ%2Fd%2F%2FMXfSHLMvQ%3D%3D/run&device=desktop&mode=rest&cmd=gauth
 
-Nota bene: l'url di reindirizzamento che passerei alle API deve essere identico a uno di quelli impostati, indi per cui se si vuole utilizzare il metodo generateAuthUrl della classe GAC in fase di sviluppo sarà necessario modificare l'impostazione dell'OAuth client ogni qual volta il session ID cambia, fatto che succede quando si chiude il progetto e lo si riapre.
+Nota bene: l'url di reindirizzamento che passerei alle API deve essere identico a uno di quelli impostati, indi per cui se si vuole utilizzare il metodo generateAuthUrl della classe GAC in fase di sviluppo sarà necessario modificare l'impostazione dell'OAuth client ogni qual volta il session ID cambia, fatto che accade quando si chiude il progetto e lo si riapre.
 
-* Applicazione in produzione
+* se siamo in fase di produzione
   * origine javascript:   
-  in questo campo bisogna aggiungere l'url del server di produzione su cui è installata l'applicazione, per esempio per la console di Instant developer inseriremo: https://console.instantdevelopercloud.com
+  in questo campo bisogna aggiungere l'url del server di produzione su cui è installata l'applicazione, per esempio per la console di Instant developer inseriremo:   
+  https://console.instantdevelopercloud.com
   * URI di reindirizzamento autorizzati:   
-  similmente al caso di svilippo inseriremo
+  similmente al caso di sviluppo inseriremo  
   <url applicazione>/<nome app>?&mode=rest&cmd=gauth
-  in questo caso dato che l'URL è statico e sempre noto una volta configurato correttamente non sarà più necessario alcun intervento.
-  Esempio di url di autorizzazione per il Cloud Control Center:
+  in questo caso dato che l'URL è statico e sempre noto una volta configurato correttamente non sarà più necessario alcun intervento.  
+  Esempio di url di autorizzazione per il Cloud Control Center:  
   https://console.instantdevelopercloud.com/CCC?mode=rest&cmd=gauth
 
-Una volta eseguiti correttamente questi passi sarà possibile utilizzare la classe GAC del framework, per informazioni su di essa consulta direttamente la documentazione presente all'interno dell'ambiente di sviluppo.
-Per ulteriori informazioni sulla Google Execution API  e sul ciclo di autorizzazione consulta [la documentazione ufficiale](https://developers.google.com/apps-script/guides/rest/api)
-
-
-
-
-
-
-
-
-The server is configured via the `config.json` file. An example can be found in `basedir/IDServer/server/config-example.json`.
-
-
+Una volta eseguiti correttamente questi passi sarà possibile utilizzare la classe GAC del framework, per informazioni su di essa consulta direttamente la documentazione presente all'interno dell'IDE.
+Per ulteriori informazioni sulla Google Execution API  e sul ciclo di autorizzazione consulta [la documentazione ufficiale](https://developers.google.com/apps-script/guides/rest/api).
