@@ -25,8 +25,10 @@ In questa fase configuriamo le API e creiamo le credenziali per potersi autentic
 Dopo aver creato le credenziali per poterle utilizzare è necessario configurare alcuni parametri.
 * Clicca sulla chiave OAuth appena creata, ti verrà mostrata la pagina di configurazione dove è necessario aggiungere le origini consentite e gli URI di reindirizzamento, per sapere quali parametri inserire è necessario distingue due momenti: 
 * sviluppo Applicazione
-  * origine javascript: in questo campo bisogna aggiungere l'url del server di sviluppo su cui si lavora, nel caso base,       ..ovvero quando stiamo utilizzando il server di default inseriamo: https://ide1-developer.instantdevelopercloud.com
-  * URI di reindirizzamento autorizzati: in questo campo aggiungeremo invece l'url dove Google ci reindirezzerà dopo l'autorizzazione dal prompt di google, dobbiamo quindi scrivere l'url dell'applicazione in esecuzione con questi parametri in più:
+  * origine javascript:   
+  in questo campo bisogna aggiungere l'url del server di sviluppo su cui si lavora, nel caso base,       ..ovvero quando stiamo utilizzando il server di default inseriamo: https://ide1-developer.instantdevelopercloud.com
+  * URI di reindirizzamento autorizzati:   
+  in questo campo aggiungeremo invece l'url dove Google ci reindirezzerà dopo l'autorizzazione dal prompt di google, dobbiamo quindi scrivere l'url dell'applicazione in esecuzione con questi parametri in più:
   <url server>/preview.html?appUrl=/<session ID>/<App ID>/run&device=<device>&mode=rest&cmd=gauth 
   questo per poter recuperare il codice di accesso nell'onCommand dell'applicazione che Le API di google aggiungono come parametro get all'url di reindirizzamento. (Per maggiori informazioni consultare la Documentazione del framework su Instant Developer Cloud).
   Esempio un url di autorizzazione:
@@ -35,8 +37,10 @@ Dopo aver creato le credenziali per poterle utilizzare è necessario configurare
 Nota bene: l'url di reindirizzamento che passerei alle API deve essere identico a uno di quelli impostati, indi per cui se si vuole utilizzare il metodo generateAuthUrl della classe GAC in fase di sviluppo sarà necessario modificare l'impostazione dell'OAuth client ogni qual volta il session ID cambia, fatto che succede quando si chiude il progetto e lo si riapre.
 
 * Applicazione in produzione
-  * origine javascript: in questo campo bisogna aggiungere l'url del server di produzione su cui è installata l'applicazione, per esempio per la console di Instant developer inseriremo: https://console.instantdevelopercloud.com
-  * URI di reindirizzamento autorizzati: similmente al caso di svilippo inseriremo
+  * origine javascript:   
+  in questo campo bisogna aggiungere l'url del server di produzione su cui è installata l'applicazione, per esempio per la console di Instant developer inseriremo: https://console.instantdevelopercloud.com
+  * URI di reindirizzamento autorizzati:   
+  similmente al caso di svilippo inseriremo
   <url applicazione>/<nome app>?&mode=rest&cmd=gauth
   in questo caso dato che l'URL è statico e sempre noto una volta configurato correttamente non sarà più necessario alcun intervento.
   Esempio di url di autorizzazione per il Cloud Control Center:
