@@ -26,7 +26,8 @@ Dopo aver creato le credenziali per poterle utilizzare è necessario configurare
 * Clicca sulla chiave OAuth appena creata, ti verrà mostrata la pagina di configurazione dove è necessario aggiungere le origini consentite e gli URI di reindirizzamento: 
 * se siamo in fase di sviluppo:
   * origine javascript      
-  in questo campo bisogna aggiungere l'url del server di sviluppo su cui si lavora, per esempio se stai utilizzando il server di default l'origine da inserire sarà: 'https://ide1-developer.instantdevelopercloud.com'
+  in questo campo bisogna aggiungere l'url del server di sviluppo su cui si lavora, per esempio se stai utilizzando il server di default l'origine da inserire sarà:  
+  'https://ide1-developer.instantdevelopercloud.com'
   * URI di reindirizzamento autorizzati   
   in questo campo aggiungeremo invece l'url dove Google ci reindirezzerà dopo l'autorizzazione dal prompt di google, dobbiamo quindi scrivere l'url dell'applicazione in esecuzione con questi parametri in più:
   <url server>/preview.html?appUrl=/<session ID>/<App ID>/run&device=<device>&mode=rest&cmd=gauth   
