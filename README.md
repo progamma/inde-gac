@@ -38,10 +38,10 @@ Dopo aver creato le credenziali per poterle utilizzare è necessario configurare
 **NOTA BENE**: l'url di reindirizzamento che passerei alle API deve essere identico a uno di quelli impostati, indi per cui se si vuole utilizzare il metodo generateAuthUrl della classe GAC in fase di sviluppo sarà necessario modificare l'impostazione dell'OAuth client ogni qual volta il session ID cambia, fatto che accade quando si chiude il progetto e lo si riapre.
 
 * se siamo in fase di produzione
-  * origine javascript:   
+  * origine javascript 
   in questo campo bisogna aggiungere l'url del server di produzione su cui è installata l'applicazione, per esempio per la console di Instant developer inseriremo:   
   https://console.instantdevelopercloud.com
-  * URI di reindirizzamento autorizzati:   
+  * URI di reindirizzamento autorizzati
   similmente al caso di sviluppo inseriremo  
   <url applicazione>/<nome app>?&mode=rest&cmd=gauth
   in questo caso dato che l'URL è statico e sempre noto una volta configurato correttamente non sarà più necessario alcun intervento.  
