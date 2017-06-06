@@ -10,7 +10,7 @@ La prima fase consiste nell'importare lo script sul proprio spazio cloud.
 * Clicca sul bottone `Nuovo` e nel menù a tendina che si aprirà seleziona `Altro -> Collega altre applicazioni`.
 * Nella finestra che si aprirà cerca `Google Apps Script` e clicca su `Collega`.
 * Una volta che l'applicazione sarà collegata clicca su sul bottone `Nuovo` e nel menù a tendina che si aprirà seleziona `Altro -> Google Apps Script`.
-* Copia e incolla il contenuto di "script.js" nell'editor dello script sostituendo tutto il contenuto inserito per default.
+* Copia e incolla il contenuto di [script.js](https://github.com/progamma/inde-gac/blob/master/script.js) nell'editor dello script sostituendo tutto il contenuto inserito per default.
 * All'interno dello script editor clicca su: `Pubblica -> Distribuisci come API eseguibile` inserisci i dati richiesti e quindi completa l'operazione cliccando su `Distribuisci`.
 * Fai clic su `File -> Proprietà del progetto` e prendi nota dello Script ID che sarà un parametro da utilizzare all'interno del codice su Instant Developer Cloud.
 
@@ -23,11 +23,11 @@ In questa fase configuriamo le API e creiamo le credenziali per potersi autentic
 
 ### Configurazione origini Javascript e URI di reindirizzamento del client OAuth
 Dopo aver creato le credenziali per poterle utilizzare è necessario configurare alcuni parametri.
-* Clicca sulla chiave OAuth appena creata, ti verrà mostrata la pagina di configurazione dove è necessario aggiungere le origini consentite e gli URI di reindirizzamento, per sapere quali parametri inserire è necessario distingue due momenti: 
-* sviluppo Applicazione
-  * origine javascript:   
-  in questo campo bisogna aggiungere l'url del server di sviluppo su cui si lavora, nel caso base,       ..ovvero quando stiamo utilizzando il server di default inseriamo: https://ide1-developer.instantdevelopercloud.com
-  * URI di reindirizzamento autorizzati:   
+* Clicca sulla chiave OAuth appena creata, ti verrà mostrata la pagina di configurazione dove è necessario aggiungere le origini consentite e gli URI di reindirizzamento: 
+* se stiamo sviluppando:
+  * origine javascript      
+  in questo campo bisogna aggiungere l'url del server di sviluppo su cui si lavora, nel caso base,       ..ovvero quando stiamo utilizzando il server di default inseriamo: 'https://ide1-developer.instantdevelopercloud.com'
+  * URI di reindirizzamento autorizzati   
   in questo campo aggiungeremo invece l'url dove Google ci reindirezzerà dopo l'autorizzazione dal prompt di google, dobbiamo quindi scrivere l'url dell'applicazione in esecuzione con questi parametri in più:
   <url server>/preview.html?appUrl=/<session ID>/<App ID>/run&device=<device>&mode=rest&cmd=gauth 
   questo per poter recuperare il codice di accesso nell'onCommand dell'applicazione che Le API di google aggiungono come parametro get all'url di reindirizzamento. (Per maggiori informazioni consultare la Documentazione del framework su Instant Developer Cloud).
