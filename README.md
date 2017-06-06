@@ -15,7 +15,7 @@ La prima fase consiste nell'importare lo script sul proprio spazio cloud.
 * Fai clic su `File -> Proprietà del progetto` e prendi nota dello Script ID che sarà un parametro da utilizzare all'interno del codice su Instant Developer Cloud.
 
 ### Creazione API e credenziali
-In questa fase configuriamo le API e creiamo le credenzialiper potersi autenticare ed eseguire lo script da remoto.
+In questa fase configuriamo le API e creiamo le credenziali per potersi autenticare ed eseguire lo script da remoto.
 * All'interno dello script editor clicca su: `Risorse -> Progetto Cloud Platform`, nell pop-up che si aprirà clicca il link che si trova sotto `Questo script al momento è associato al progetto:` così da accedere alle impostazioni del progetto Cloud.
 * Clicca sul bottone `Abilita API` e nella nuova finestra cerca e seleziona `Google Apps Script Execution API", infine clicca su `Abilita`.
 * Dal menù di sinistra clicca su `Credenziali` e nella nuova finestra su `Crea Credenziali -> ID client OAuth`
