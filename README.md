@@ -30,7 +30,7 @@ Dopo aver creato le credenziali per poterle utilizzare è necessario configurare
   https://ide1-developer.instantdevelopercloud.com
   * URI di reindirizzamento autorizzati   
   in questo campo aggiungeremo invece l'url dove Google ci reindirezzerà dopo l'autorizzazione dal prompt di google, dobbiamo quindi scrivere l'url dell'applicazione in esecuzione con questi parametri in più:   
-  `<url server>/preview.html?appUrl=/<session ID>/<App ID>/run&device=<device>&mode=rest&cmd=gauth`    
+  `<url server>/preview.html?appUrl=/<session ID>/<App ID>/run&device=<device>&mode=rest&cmd=<cmd>`    
   questo per poter recuperare all'interno dell'evento onCommand dell'applicazione il codice di accesso che la API di Google aggiunge come parametro GET all'url di reindirizzamento. (Per maggiori informazioni consultare la Documentazione del framework su Instant Developer Cloud).   
   Esempio URL di autorizzazione:  
   http://host/app/client/preview.html?appUrl=/8e97cd80-1930-4200-a5ef-b3ba2580d0c6/pfcM12LrJ%2Fd%2F%2FMXfSHLMvQ%3D%3D/run&device=desktop&mode=rest&cmd=gauth
