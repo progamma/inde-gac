@@ -2,7 +2,7 @@ Instant Developer Google Apps Connect
 ================================
 
 
-Lo script permette di utilizzare il componente framework GAC di Instant Developer Cloud che ti consente di generare documenti di reportistica direttamente sul tuo spazio Google Drive.
+Lo script permette di utilizzare il componente framework GAC di Instant Developer Cloud che permette di generare documenti di reportistica direttamente sullo spazio Google Drive.
 ----------------
 ### Importazione script
 La prima fase consiste nell'importare lo script sul proprio spazio cloud.
