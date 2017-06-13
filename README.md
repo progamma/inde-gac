@@ -43,7 +43,7 @@ Dopo aver creato le credenziali per poterle utilizzare è necessario configurare
   https://console.instantdevelopercloud.com
   * URI di reindirizzamento autorizzati   
   similmente al caso di sviluppo inseriremo:  
-  `<url applicazione>/<nome app>?&mode=rest&cmd=gauth`   
+  `<url applicazione>/<nome app>?&mode=rest&cmd=<cmd>`   
   in questo caso dato che l'URL è statico e sempre noto una volta configurato correttamente non sarà più necessario alcun intervento.  
   Esempio URL di autorizzazione per il Cloud Control Center:  
   https://console.instantdevelopercloud.com/CCC?mode=rest&cmd=gauth
