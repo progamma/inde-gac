@@ -428,6 +428,9 @@ function replaceImage(element,set) {
  * @param {String} newValue
 */
 function replace(element,target,newValue) {
+  // replaces all "|" to escape the character (reserved in Regular Expression)
+  target=target.replace(/\|/g,"\\|");
+  //
   // if the element is a "body" replace the value through a specific method
   if(element.getType()===DocumentApp.ElementType.BODY_SECTION) 
     element.replaceText("{"+target+"}",newValue);
