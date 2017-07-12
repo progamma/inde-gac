@@ -48,5 +48,5 @@ Dopo aver creato le credenziali per poterle utilizzare è necessario configurare
   Esempio URL di autorizzazione  
   https://myserver/myappname?mode=rest&cmd=gauth
 
-Una volta eseguiti correttamente questi passi sarà possibile utilizzare la classe GAC del framework, per informazioni su di essa consulta direttamente la documentazione presente all'interno dell'IDE.   
+Una volta eseguiti correttamente questi passi sarà possibile utilizzare la classe GAC del framework, per informazioni su di essa consultare direttamente la documentazione presente all'interno dell'IDE.   
 Per ulteriori informazioni sulla Google Execution API  e sul ciclo di autorizzazione consultare [la documentazione ufficiale](https://developers.google.com/apps-script/guides/rest/api).
