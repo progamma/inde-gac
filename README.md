@@ -29,7 +29,7 @@ Dopo aver creato le credenziali per poterle utilizzare è necessario configurare
   in questo campo bisogna aggiungere l'url del server di sviluppo su cui si lavora, per esempio:  
   https://myserver.com
   * `URI di reindirizzamento autorizzati`   
-  in questo campo si imposterà l'url dove Google reindirizza dopo l'autorizzazione dal prompt di google, si scriva l'url dell'applicazione in esecuzione con questi parametri in più:   
+  in questo campo si imposterà l'url dove Google reindirizza dopo l'autorizzazione dal prompt, si scriva l'url dell'applicazione in esecuzione con questi parametri in più:   
   `<url server>/<session ID>/<App ID>/run?mode=rest&cmd=<cmd>`    
    per poter recuperare all'interno dell'evento onCommand dell'applicazione il codice di accesso che la API di Google aggiunge come parametro GET all'url di reindirizzamento. (Per maggiori informazioni consultare la Documentazione del framework su Instant Developer Cloud).   
   Esempio URL:  
