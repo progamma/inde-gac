@@ -9,7 +9,7 @@ La prima fase consiste nell'importare lo script sul proprio spazio cloud.
 * Accedere a Google Drive da browser https://www.google.com/intl/it/drive/.
 * Cliccare sul bottone `Nuovo` e nel menù a tendina che si aprirà selezionare `Altro -> Collega altre applicazioni`.
 * Nella finestra che si aprirà cercare `Google Apps Script` e cliccare su `Collega`.
-* Una volta che l'applicazione sarà collegata cliccare sul bottone `Nuovo` e nel menù a tendina che si aprirà selezionare `Altro -> Google Apps Script`.
+* Una volta che l'applicazione sarà collegata, cliccare sul bottone `Nuovo` e nel menù a tendina che si aprirà selezionare `Altro -> Google Apps Script`.
 * Copiare e incollare il contenuto di [script.js](https://github.com/progamma/inde-gac/blob/master/script.js) nell'editor dello script sostituendo tutto il contenuto inserito per default.
 * All'interno dello script editor cliccare su: `Pubblica -> Distribuisci come API eseguibile` inserire i dati richiesti e quindi completare l'operazione cliccando su `Distribuisci`.
 * Fai clic su `File -> Proprietà del progetto` prendendo così nota dello Script ID che sarà un parametro da utilizzare all'interno del codice su Instant Developer Cloud.
