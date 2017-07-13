@@ -11,7 +11,7 @@ La prima fase consiste nell'importare lo script sul proprio spazio cloud.
 * Nella finestra che si aprirà cercare `Google Apps Script` e cliccare su `Collega`.
 * Una volta che l'applicazione sarà collegata, cliccare sul bottone `Nuovo` e nel menù a tendina che si aprirà selezionare `Altro -> Google Apps Script`.
 * Copiare e incollare il contenuto di [script.js](https://github.com/progamma/inde-gac/blob/master/script.js) nell'editor dello script sostituendo tutto il contenuto inserito per default.
-* All'interno dello script editor cliccare su: `Pubblica -> Distribuisci come API eseguibile` inserire i dati richiesti e quindi completare l'operazione cliccando su `Distribuisci`.
+* All'interno dello script editor cliccare su: `Pubblica -> Distribuisci come API eseguibile`, inserire il numero di versione e lasciare `Chi ha acesso allo script` impostato su: `Solo io` quindi completare l'operazione cliccando su `Distribuisci`.
 * Cliccare su `File -> Proprietà del progetto` prendendo così nota dello Script ID che sarà un parametro da utilizzare all'interno del codice su Instant Developer Cloud.
 
 ### Creazione API e credenziali
