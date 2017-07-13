@@ -27,7 +27,7 @@ Dopo aver creato le credenziali per poterle utilizzare è necessario configurare
 * se si è in fase di sviluppo:
   * `Origini JavaScript autorizzate`         
   in questo campo bisogna aggiungere l'URL del server di sviluppo su cui si lavora, per esempio:  
-  https://myserver.com
+  http://ide1-xyz.instantdevelopercloud.com
   * `URI di reindirizzamento autorizzati`   
   in questo campo si imposterà l'URL dove Google reindirizza dopo l'autorizzazione dal prompt, si scriva l'URL dell'applicazione in esecuzione con questi parametri in più:   
   `<URL server>/<session ID>/<App ID>/run?mode=rest&cmd=<cmd>`    
@@ -40,7 +40,7 @@ Dopo aver creato le credenziali per poterle utilizzare è necessario configurare
 * se si è in fase di produzione
   * `Origini JavaScript autorizzate`      
   in questo campo bisogna aggiungere l'URL del server di produzione su cui è installata l'applicazione, per esempio:
-  https://ide1-xyz.instantdevelopercloud.com
+  https://myserver.com
   * `URI di reindirizzamento autorizzati`   
   similmente al caso di sviluppo si deve inserire:  
   `<URL applicazione>/<nome app>?&mode=rest&cmd=<cmd>`   
