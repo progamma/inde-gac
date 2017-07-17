@@ -8,9 +8,9 @@ Lo script permette di utilizzare il componente framework GAC di Instant Develope
 La prima fase consiste nell'importare lo script sul proprio spazio cloud.
 * Accedere a Google Drive da browser:
   https://www.google.com/drive/.
-* Cliccare sul bottone `New` e nel menù a tendina che si aprirà selezionare `More -> Connect more apps`.
+* Cliccare sul bottone `New` e nel menu a tendina che si aprirà selezionare `More -> Connect more apps`.
 * Nella finestra che si aprirà cercare `Google Apps Script` e cliccare su `Connect`.
-* Una volta che l'applicazione sarà collegata, cliccare sul bottone `New` e nel menù a tendina che si aprirà selezionare `More -> Google Apps Script`.
+* Una volta che l'applicazione sarà collegata, cliccare sul bottone `New` e nel menu a tendina che si aprirà selezionare `More -> Google Apps Script`.
 * Copiare e incollare il contenuto di [script.js](https://github.com/progamma/inde-gac/blob/master/script.js) nell'editor dello script sostituendo tutto il contenuto inserito per default.
 * All'interno dello script editor cliccare su: `Publish -> Deploy as API executable`, inserire il numero di versione e lasciare `Who has access to the script` impostato su: `Only myself` quindi completare l'operazione cliccando su `Deploy`.
 * Cliccare su `File -> Project properties` prendendo così nota dello Script ID che sarà un parametro da utilizzare all'interno del codice su Instant Developer Cloud.
@@ -19,7 +19,7 @@ La prima fase consiste nell'importare lo script sul proprio spazio cloud.
 In questa fase si devono configurare le API e creare le credenziali per potersi autenticare ed eseguire lo script da remoto.
 * All'interno dello script editor cliccare su: `Resources -> Cloud Platform project`, nel pop-up che si aprirà cliccare il link che si trova sotto `This script is currently associated with project:` così da accedere alle impostazioni del progetto Cloud.
 * Cliccare sul bottone `Enable API` e nella nuova finestra cercare e selezionare `Google Apps Script Execution API`, infine cliccare su `Enable`.
-* Dal menù di sinistra cliccare su `Credentials` e nella nuova finestra su `Create credentials -> OAuth client ID`
+* Dal menu di sinistra cliccare su `Credentials` e nella nuova finestra su `Create credentials -> OAuth client ID`
 * Selezionare come tipo di applicazione `Web application`, dopo aver dato il nome desiderato cliccare su `Create`, **si prenda nota dell'ID client e del client secret che ti verranno mostrati.**
 
 ### Configurazione origini Javascript e URI di reindirizzamento 
