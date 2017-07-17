@@ -26,10 +26,10 @@ In questa fase si devono configurare le API e creare le credenziali per potersi 
 Dopo aver creato le credenziali per poterle utilizzare è necessario configurare alcuni parametri.
 * Cliccare sulla chiave OAuth appena creata, verrà mostrata la pagina di configurazione dove è necessario aggiungere le origini consentite e gli URI di reindirizzamento: 
 * se si è in fase di sviluppo:
-  * `Origini JavaScript autorizzate`         
+  * `Authorised JavaScript origins`         
   in questo campo bisogna aggiungere l'URL del server di sviluppo su cui si lavora, per esempio:  
   http://ide-xyz.instantdevelopercloud.com
-  * `URI di reindirizzamento autorizzati`   
+  * `Authorised redirect URIs`   
   in questo campo si imposterà l'URL dove Google reindirizza dopo l'autorizzazione dal prompt, si scriva l'URL dell'applicazione in esecuzione con questi parametri in più:   
   `<URL server>/<session ID>/<App ID>/run?mode=rest&cmd=<cmd>`    
    per poter recuperare all'interno dell'evento onCommand dell'applicazione il codice di accesso che la API di Google aggiunge come parametro GET all'URL di reindirizzamento. (Per maggiori informazioni consultare la Documentazione del framework su Instant Developer Cloud).   
@@ -39,10 +39,10 @@ Dopo aver creato le credenziali per poterle utilizzare è necessario configurare
 **NOTA BENE**: l'URL di reindirizzamento che si passa alle API deve essere identico a uno di quelli impostati, quindi se si vuole utilizzare il metodo generateAuthUrl della classe GAC in fase di sviluppo sarà necessario modificare l'impostazione dell'OAuth client ogni qual volta il session ID cambia, fatto che accade quando si chiude il progetto e lo si riapre.
 
 * se si è in fase di produzione
-  * `Origini JavaScript autorizzate`      
+  * `Authorised JavaScript origins`      
   in questo campo bisogna aggiungere l'URL del server di produzione su cui è installata l'applicazione, per esempio:
   https://myserver.com
-  * `URI di reindirizzamento autorizzati`   
+  * `Authorised redirect URIs`   
   similmente al caso di sviluppo si deve inserire:  
   `<URL applicazione>/<nome app>?&mode=rest&cmd=<cmd>`   
   in questo caso dato che l'URL è statico e sempre noto una volta configurato correttamente non sarà più necessario alcun intervento.  
