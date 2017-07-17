@@ -2,7 +2,7 @@ Instant Developer Google Apps Connect
 ================================
 
 
-Lo script permette di utilizzare il componente framework GAC di Instant Developer Cloud che consente di generare documenti di reportistica direttamente sullo spazio Google Drive.
+Lo script permette di utilizzare il componente framework GAC di Instant Developer Cloud, che consente di generare documenti di reportistica direttamente sullo spazio Google Drive.
 ----------------
 ### Importazione script
 La prima fase consiste nell'importare lo script sul proprio spazio cloud.
@@ -23,7 +23,7 @@ In questa fase si devono configurare le API e creare le credenziali per potersi 
 * Selezionare `Web application` come tipo di applicazione. Dopo aver dato il nome desiderato cliccare su `Create`, **Prendere nota dell'ID client e del client secret che ti verranno mostrati.**
 
 ### Configurazione origini Javascript e URI di reindirizzamento 
-Dopo aver creato le credenziali per poterle utilizzare è necessario configurare alcuni parametri.
+Dopo aver creato le credenziali, per poterle utilizzare è necessario configurare alcuni parametri.
 * Cliccare sulla chiave OAuth appena creata. Verrà mostrata la pagina di configurazione dove è necessario aggiungere le origini consentite e gli URI di reindirizzamento: 
 * Se si è in fase di sviluppo:
   * `Authorised JavaScript origins`         
