@@ -6,20 +6,21 @@ Lo script permette di utilizzare il componente framework GAC di Instant Develope
 ----------------
 ### Importazione script
 La prima fase consiste nell'importare lo script sul proprio spazio cloud.
-* Accedere a Google Drive da browser https://www.google.com/intl/it/drive/.
-* Cliccare sul bottone `Nuovo` e nel menù a tendina che si aprirà selezionare `Altro -> Collega altre applicazioni`.
-* Nella finestra che si aprirà cercare `Google Apps Script` e cliccare su `Collega`.
-* Una volta che l'applicazione sarà collegata, cliccare sul bottone `Nuovo` e nel menù a tendina che si aprirà selezionare `Altro -> Google Apps Script`.
+* Accedere a Google Drive da browser:
+  https://www.google.com/drive/.
+* Cliccare sul bottone `New` e nel menù a tendina che si aprirà selezionare `More -> Connect more apps`.
+* Nella finestra che si aprirà cercare `Google Apps Script` e cliccare su `Connect`.
+* Una volta che l'applicazione sarà collegata, cliccare sul bottone `New` e nel menù a tendina che si aprirà selezionare `More -> Google Apps Script`.
 * Copiare e incollare il contenuto di [script.js](https://github.com/progamma/inde-gac/blob/master/script.js) nell'editor dello script sostituendo tutto il contenuto inserito per default.
-* All'interno dello script editor cliccare su: `Pubblica -> Distribuisci come API eseguibile`, inserire il numero di versione e lasciare `Chi ha acesso allo script` impostato su: `Solo io` quindi completare l'operazione cliccando su `Distribuisci`.
-* Cliccare su `File -> Proprietà del progetto` prendendo così nota dello Script ID che sarà un parametro da utilizzare all'interno del codice su Instant Developer Cloud.
+* All'interno dello script editor cliccare su: `Publish -> Deploy as API executable`, inserire il numero di versione e lasciare `Who has access to the script` impostato su: `Only myself` quindi completare l'operazione cliccando su `Deploy`.
+* Cliccare su `File -> Project properties` prendendo così nota dello Script ID che sarà un parametro da utilizzare all'interno del codice su Instant Developer Cloud.
 
 ### Creazione API e credenziali
 In questa fase si devono configurare le API e creare le credenziali per potersi autenticare ed eseguire lo script da remoto.
-* All'interno dello script editor cliccare su: `Risorse -> Progetto Cloud Platform`, nel pop-up che si aprirà cliccare il link che si trova sotto `Questo script al momento è associato al progetto:` così da accedere alle impostazioni del progetto Cloud.
-* Cliccare sul bottone `Abilita API` e nella nuova finestra cercare e selezionare `Google Apps Script Execution API`, infine cliccare su `Abilita`.
-* Dal menù di sinistra cliccare su `Credenziali` e nella nuova finestra su `Crea Credenziali -> ID client OAuth`
-* Selezionare come tipo di applicazione `Applicazione web`, dopo aver dato il nome desiderato cliccare su crea, **si prenda nota dell'ID client e del client secret che ti verranno mostrati.**
+* All'interno dello script editor cliccare su: `Resources -> Cloud Platform project`, nel pop-up che si aprirà cliccare il link che si trova sotto `This script is currently associated with project:` così da accedere alle impostazioni del progetto Cloud.
+* Cliccare sul bottone `Enable API` e nella nuova finestra cercare e selezionare `Google Apps Script Execution API`, infine cliccare su `Enable`.
+* Dal menù di sinistra cliccare su `Credentials` e nella nuova finestra su `Create credentials -> OAuth client ID`
+* Selezionare come tipo di applicazione `Web application`, dopo aver dato il nome desiderato cliccare su `Create`, **si prenda nota dell'ID client e del client secret che ti verranno mostrati.**
 
 ### Configurazione origini Javascript e URI di reindirizzamento 
 Dopo aver creato le credenziali per poterle utilizzare è necessario configurare alcuni parametri.
