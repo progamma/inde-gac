@@ -374,7 +374,7 @@ function replaceTextForTarget(element,set) {
 
   
 /**
- * Replace text for a specific target
+ * Replaces text for a specific target
  * @param {Object} element
  * @param {Object} set
 */
