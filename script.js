@@ -223,7 +223,7 @@ function replaceValues(set,element) {
  * @param {Object} element
 */
 function applyStyle(element,set) {
-  // if the element is a "body", get all target's elements in document
+  // if the element is a "body", get all target elements in document
   if(element.getType()===DocumentApp.ElementType.BODY_SECTION) {
     var elements=getTargetElements(element,set["target"]); 
     //
