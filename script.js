@@ -374,7 +374,7 @@ function replaceTextForTarget(element,set) {
 
   
 /**
- * Replaces text for a specific target
+ * Replaces image for a specific target
  * @param {Object} element
  * @param {Object} set
 */
@@ -382,7 +382,7 @@ function replaceImage(element,set) {
   try {
     var elements=[element];
     //
-    // if the element is a "body", gets all target's elements in document
+    // if the element is a "body", gets all target elements in document
     if(element.getType()===DocumentApp.ElementType.BODY_SECTION) 
       elements=getTargetElements(element,set["target"]);  
     //
