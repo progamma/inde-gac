@@ -20,7 +20,7 @@ In questa fase si devono configurare le API e creare le credenziali per potersi 
 * All'interno dello script editor cliccare su: `Resources -> Cloud Platform project`. Nel pop-up che si aprirà cliccare il link che si trova sotto `This script is currently associated with project:` così da accedere alle impostazioni del progetto Cloud.
 * Cliccare sul bottone `Enable API` e nella nuova finestra cercare e selezionare `Google Apps Script Execution API`, infine cliccare su `Enable`.
 * Dal menu di sinistra cliccare su `Credentials` e nella nuova finestra su `Create credentials -> OAuth client ID`
-* Selezionare `Web application` come tipo di applicazione. Dopo aver dato il nome desiderato cliccare su `Create`, **Prendere nota dell'ID client e del client secret che ti verranno mostrati.**
+* Selezionare `Web application` come tipo di applicazione. Dopo aver dato il nome desiderato cliccare su `Create`, **Prendere nota dell'ID client e del client secret che verranno mostrati.**
 
 ### Configurazione origini Javascript e URI di reindirizzamento 
 Dopo aver creato le credenziali, per poterle utilizzare è necessario configurare alcuni parametri.
