@@ -2,52 +2,52 @@ Instant Developer Google Apps Connect
 ================================
 
 
-Lo script permette di utilizzare il componente framework GAC di Instant Developer Cloud, che consente di generare documenti di reportistica direttamente sullo spazio Google Drive.
+The script allows you to use the Instant Developer Cloud GAC framework, which will let you generate reporting documents directly on the Google Drive space.
 ----------------
-### Importazione script
-La prima fase consiste nell'importare lo script sul proprio spazio cloud.
-* Accedere a Google Drive da browser:
+### Importing the script
+The first step is to import the script to your cloud space.
+* Access Google Drive from a browser:
   https://www.google.com/drive/.
-* Cliccare sul bottone `New` e nel menu a tendina che si aprirà selezionare `More -> Connect more apps`.
-* Nella finestra che si aprirà cercare `Google Apps Script` e cliccare su `Connect`.
-* Una volta che l'applicazione sarà collegata, cliccare sul bottone `New` e nel menu a tendina che si aprirà selezionare `More -> Google Apps Script`.
-* Copiare e incollare il contenuto di [script.js](https://github.com/progamma/inde-gac/blob/master/script.js) nello script editor sostituendo tutto il contenuto inserito per default.
-* All'interno dello script editor cliccare su: `Publish -> Deploy as API executable`, inserire il numero di versione e lasciare `Who has access to the script` impostato su: `Only myself`, quindi completare l'operazione cliccando su `Deploy`.
-* Cliccare su `File -> Project properties` e prendere nota dello Script ID che sarà un parametro da utilizzare all'interno del codice su Instant Developer Cloud.
+* Click `New` and select `More -> Connect more apps` in the drop-down menu that appears.
+* In the window that opens, search for `Google Apps Script` and click `Connect`.
+* Once the application is connected, click `New` and select `More -> Google Apps Script` in the drop-down menu that appears.
+* Copy and paste the content of [script.js](https://github.com/progamma/inde-gac/blob/master/script.js) into the script editor, replacing all of the default content.
+* In the script editor, click: `Publish -> Deploy as API executable`, enter the version number and leave `Who has access to the script` set to: `Only myself`, and then complete the operation by clicking `Deploy`.
+* Click `File -> Project properties` and make a note of the Script ID, which will be a parameter to be used in the code in Instant Developer Cloud.
 
-### Creazione API e credenziali
-In questa fase si devono configurare le API e creare le credenziali per potersi autenticare ed eseguire lo script da remoto.
-* All'interno dello script editor cliccare su: `Resources -> Cloud Platform project`. Nel pop-up che si aprirà cliccare il link che si trova sotto `This script is currently associated with project:` così da accedere alle impostazioni del progetto Cloud.
-* Cliccare sul bottone `Enable API` e nella nuova finestra cercare e selezionare `Google Apps Script Execution API`, infine cliccare su `Enable`.
-* Dal menu di sinistra cliccare su `Credentials` e nella nuova finestra su `Create credentials -> OAuth client ID`
-* Selezionare `Web application` come tipo di applicazione. Dopo aver dato il nome desiderato cliccare su `Create`, **Prendere nota dell'ID client e del client secret che verranno mostrati.**
+### Creating APIs and credentials
+In this phase you need to configure the APIs and create the credentials so that you can authenticate and run the script remotely.
+* In the script editor click: `Resources -> Cloud Platform project`. In the pop-up that opens, click the link you'll find under `This script is currently associated with project:` to access the Cloud project settings.
+* Click `Enable API`. In the new window find and select `Google Apps Script Execution API`, and click `Enable`.
+* In the menu on the left, click `Credentials` and in the new window click `Create credentials -> OAuth client ID`.
+* Select `Web application` as the application type. After you've created the name you want, click `Create`, **Make a note of the client ID and the client secret that will be shown.**
 
-### Configurazione origini Javascript e URI di reindirizzamento 
-Dopo aver creato le credenziali, per poterle utilizzare è necessario configurare alcuni parametri.
-* Cliccare sulla chiave OAuth appena creata. Verrà mostrata la pagina di configurazione dove è necessario aggiungere le origini consentite e gli URI di reindirizzamento: 
-* Se si è in fase di sviluppo:
-  * `Authorised JavaScript origins`         
-  in questo campo è necessario aggiungere l'URL del server di sviluppo su cui si lavora, per esempio:  
+### Configuring JavaScript origins and redirect URIs 
+Once you've created the credentials, you need to configure a few parameters in order to use them.
+* Click the OAuth key that was just created. The configuration page will be shown, and there you need to add the allowed origins and the redirect URIs: 
+* If during development:
+  * `Authorized JavaScript origins`         
+  in this field you need to add the URL of the development server you're working with, for example:  
   http://ide-xyz.instantdevelopercloud.com
-  * `Authorised redirect URIs`   
-  in questo campo si imposterà l'URL dove Google reindirizza dopo l'autorizzazione dal prompt. Scrivere l'URL dell'applicazione in esecuzione con questi parametri in aggiunta:   
+  * `Authorized redirect URIs`   
+  in this field you'll set the URL where Google will redirect after authorization from the prompt. Enter the URL of the application running, adding these parameters as well:   
   `<URL server>/<session ID>/<App ID>/run?mode=rest&cmd=<cmd>`    
-   per poter recuperare all'interno dell'evento onCommand dell'applicazione il codice di accesso che la API di Google aggiunge come parametro GET all'URL di reindirizzamento. (Per maggiori informazioni consultare la documentazione del framework su Instant Developer Cloud).   
-  Esempio di URL:  
+   in order to retrieve inside the onCommand event of the application the access code that the Google API adds to the redirect URL as a GET parameter. (For more information, read the framework documentation on Instant Developer Cloud).   
+  Example URL:  
   http://ide-xyz.instantdevelopercloud.com/8e97cd80-1930-4200-a5ef-b3ba2580d0c6/pfcM12LrJ%2Fd%2F%2FMXfSHLMvQ%3D%3D/run?mode=rest&cmd=gauth
   
-**ATTENZIONE**: l'URL di reindirizzamento che si passa alle API deve essere identico a uno di quelli impostati, quindi se si vuole utilizzare il metodo generateAuthUrl della classe GAC in fase di sviluppo, sarà necessario modificare l'impostazione del  client OAuth ogni qual volta l'ID di sessione cambia, fatto che accade quando si chiude il progetto e lo si riapre.
+**WARNING**: the redirect URL that is sent to the APIs must be the same as one of those set, so if you want to use the GAC class generateAuthUrl method during development, you'll need to change the setting of the OAuth client every time the session ID changes, which occurs when you close the project and open it again.
 
-* Se si è in fase di produzione
-  * `Authorised JavaScript origins`      
-  in questo campo è necessario aggiungere l'URL del server di produzione su cui è installata l'applicazione, per esempio:
+* If during production
+  * `Authorized JavaScript origins`      
+  in this field you need to add the URL of the production server the application is installed on. For example:
   https://myserver.com
-  * `Authorised redirect URIs`   
-  similmente al caso di sviluppo si deve inserire:  
-  `<URL applicazione>/<nome app>?&mode=rest&cmd=<cmd>`   
-  in questo caso, dato che l'URL è statico e sempre noto, una volta che sarà stato configurato come URL di reindirizzamento, non sarà più necessario alcun intervento.  
-  Esempio URL di autorizzazione  
+  * `Authorized redirect URIs`   
+  similar to the development example, you need to enter:  
+  `<application URL>/<app name>?&mode=rest&cmd=<cmd>`   
+  in this case, given that the URL is static and is always known, once it has been configured as a redirect URL, no further action is necessary.  
+  Example of authorization URL  
   https://myserver/myappname?mode=rest&cmd=gauth
 
-Una volta eseguiti correttamente questi passi, sarà possibile utilizzare la classe GAC del framework. Per informazioni su di essa consultare direttamente la documentazione presente all'interno dell'IDE.   
-Per ulteriori informazioni sulla Google Execution API  e sul ciclo di autorizzazione, consultare [la documentazione ufficiale](https://developers.google.com/apps-script/guides/rest/api).
+The framework GAC class can be used once these steps are completed correctly. Consult the documentation in the IDE directly for information on this class.   
+For more information about Google Execution API and the authorization cycle, consult [the official documentation](https://developers.google.com/apps-script/guides/rest/api).
