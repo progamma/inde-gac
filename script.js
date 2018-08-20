@@ -426,6 +426,9 @@ function replaceImage(element,set) {
  * @param {String} newValue
 */
 function replace(element,target,newValue) {
+  // protect from null replace values
+  newValue= newValue===null || newValue===undefined ? "" : newValue;
+  //
   // replaces all "|" to escape the character (reserved in Regular Expression)
   target=target.replace(/\|/g,"\\|");
   //
