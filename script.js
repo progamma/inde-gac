@@ -106,8 +106,11 @@ function generateElements(set,doc) {
     if(Array.isArray(set[keys[0]])) {
       //
       // find start tag and end tag
-      var startElement=body.findText("{"+keys[0]+"}") ? body.findText("{"+keys[0]+"}").getElement() : null;
-      var endElement=body.findText("{/"+keys[0]+"}") ? body.findText("{/"+keys[0]+"}").getElement() : null;
+      var startElement=body.findText("(?i){"+keys[0]+"}") ? body.findText("(?i){"+keys[0]+"}").getElement() : null;
+      var endElement=body.findText("(?i){/"+keys[0]+"}") ? body.findText("(?i){/"+keys[0]+"}").getElement() : null;
+      //
+      if(!startElement || !endElement)
+        return;
       //
       // build a new "range" that contains the "template" elements  
       var rangeBuilder = doc.newRange();
@@ -187,6 +190,7 @@ function generateElements(set,doc) {
       replaceValues(set,body);
   }
   catch(ex) {
+Logger.log(ex);
     return {id:null, err: ex};
   }
 }
@@ -256,7 +260,7 @@ function style(element,set) {
     // if the element is a table row, the style for a single cell must be applied
     if(elementType===DocumentApp.ElementType.TABLE_ROW) {
       table=element.getParent();
-      var cellRange=element.findText("{"+set["target"]+"}");
+      var cellRange=element.findText("(?i){"+set["target"]+"}");
       //
       if(cellRange) 
         element=cellRange.getElement().getParent().getParent();      
@@ -279,6 +283,7 @@ function style(element,set) {
     style[DocumentApp.Attribute.FONT_SIZE] = set.style["font-size"];
     style[DocumentApp.Attribute.HEADING] = set.style["heading"];
     style[DocumentApp.Attribute.WIDTH] = set.style["width"];
+    style[DocumentApp.Attribute.HEIGHT] = set.style["height"];
     //
     // handle padding
     style[DocumentApp.Attribute.PADDING_BOTTOM] = set.style["padding-bottom"];
@@ -387,7 +392,7 @@ function replaceImage(element,set) {
       elements=getTargetElements(element,set["target"]);  
     //
     for(var i=0;i<elements.length;i++) {
-      var startElement=elements[i].findText("{"+set.target+"}") ? element.findText("{"+set.target+"}").getElement() : null;
+      var startElement=elements[i].findText("(?i){"+set.target+"}") ? element.findText("(?i){"+set.target+"}").getElement() : null;
       //
       // if the target is not found in the current element, skip to the next
       if(!startElement)
@@ -398,13 +403,19 @@ function replaceImage(element,set) {
       //
       // get parent of element
       var paragraph=startElement.getParent();
+      // Insert a web image  
+      var image = set["value"];
+      //
+      // fetch image data
+      var blob = UrlFetchApp.fetch(image).getBlob();
       //
       // if parent is a paragraph and there is a replace image, append image
-      if(paragraph.getType()===DocumentApp.ElementType.PARAGRAPH && set["value"]) 
-        var newImage=paragraph.appendInlineImage(set["value"]);
+      if(blob && paragraph.getType()===DocumentApp.ElementType.PARAGRAPH && set["value"]) 
+        var newImage=paragraph.appendInlineImage(blob);
       //
       // before applying style, select correct element 
       sibling= newImage || sibling;
+      //
       if(sibling.getType()===DocumentApp.ElementType.INLINE_IMAGE && set["style"]) 
         style(sibling,set);
       //
@@ -413,6 +424,7 @@ function replaceImage(element,set) {
     }
   }
   catch(ex) {
+    Logger.log(ex);
     return {id:null, err: ex};
   }
 }
@@ -434,9 +446,9 @@ function replace(element,target,newValue) {
   //
   // if element is a "body" replace value through a specific method
   if(element.getType()===DocumentApp.ElementType.BODY_SECTION) 
-    element.replaceText("{"+target+"}",newValue);
+    element.replaceText("(?i){"+target+"}",newValue);
   else
-    element.editAsText().replaceText("{"+target+"}",newValue);
+    element.editAsText().replaceText("(?i){"+target+"}",newValue);
 }
 
 
@@ -448,12 +460,12 @@ function replace(element,target,newValue) {
 function getTargetElements(body,target) {
   // find positions
   var elements=[];
-  var range=body.findText("{"+target +"}");
+  var range=body.findText("(?i){"+target +"}");
   //
   // find all occurences
   while(range) {
     elements.push(range.getElement());
-    range=body.findText("{"+target +"}",range);
+    range=body.findText("(?i){"+target +"}",range);
   }
   return elements;
 }
