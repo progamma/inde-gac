@@ -143,12 +143,18 @@ function generateElements(set,doc) {
       // if the element at the bottom of the tag is a table, create new table
       var upElement=startElement.getParent().getPreviousSibling();
       //
-      if(upElement && upElement.getType() == DocumentApp.ElementType.TABLE) {
-        if(tableRows.length) {
+      if(templateElements[0].getType() == DocumentApp.ElementType.TABLE) {
+        var masterTable=upElement;
+        //
+        if(masterTable && masterTable.getType() !== DocumentApp.ElementType.TABLE) {
+          masterTable= body.insertTable(body.getChildIndex(upElement));
+        }
+        //
+        if(tableRows.length && masterTable) {
           for(var i=0;i<set[keys[0]].length;i++) {
             //
             for(var j=0;j<tableRows.length;j++) {
-              var newRow=upElement.appendTableRow(tableRows[j].copy());
+              var newRow=masterTable.appendTableRow(tableRows[j].copy());
               //
               // if the rows set is Array
               if(Array.isArray(set[keys[0]][i])) {
@@ -190,7 +196,6 @@ function generateElements(set,doc) {
       replaceValues(set,body);
   }
   catch(ex) {
-Logger.log(ex);
     return {id:null, err: ex};
   }
 }
@@ -424,7 +429,6 @@ function replaceImage(element,set) {
     }
   }
   catch(ex) {
-    Logger.log(ex);
     return {id:null, err: ex};
   }
 }
@@ -449,6 +453,25 @@ function replace(element,target,newValue) {
     element.replaceText("(?i){"+target+"}",newValue);
   else
     element.editAsText().replaceText("(?i){"+target+"}",newValue);
+}
+
+
+/**
+ * Gets target elements
+ * @param {Object} body
+ * @param {String} target
+*/
+function getTargetElements(body,target) {
+  // find positions
+  var elements=[];
+  var range=body.findText("(?i){"+target +"}");
+  //
+  // find all occurences
+  while(range) {
+    elements.push(range.getElement());
+    range=body.findText("(?i){"+target +"}",range);
+  }
+  return elements;
 }
 
 
